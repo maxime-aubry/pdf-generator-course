@@ -1,12 +1,6 @@
-import { View, Text, StyleSheet } from '@react-pdf/renderer';
+import { View, Text } from '@react-pdf/renderer';
 import { ItemRowDto } from '../ItemRow/ItemRow.dto';
-
-const styles = StyleSheet.create({
-  totalSection: {
-    marginTop: 8,
-    textAlign: 'right',
-  },
-});
+import { tw } from '../../tailwind';
 
 interface TotalsProps {
     items: ItemRowDto[];
@@ -22,10 +16,10 @@ export default function Totals({ items, tax }: TotalsProps) {
   const total = subtotal + taxValue;
 
   return (
-    <View style={styles.totalSection}>
-      <Text>Sous-total : {subtotal.toFixed(2)} €</Text>
-      <Text>TVA ({tax}%) : {taxValue.toFixed(2)} €</Text>
-      <Text>Total TTC : {total.toFixed(2)} €</Text>
+    <View style={tw('mt-6 ml-auto w-56 p-3 border border-gray-200 rounded bg-gray-50')}>
+      <Text style={tw('flex-row justify-between text-[9px] mb-1')}>Sous-total : {subtotal.toFixed(2)} €</Text>
+      <Text style={tw('flex-row justify-between text-[9px] mb-1')}>TVA ({tax}%) : {taxValue.toFixed(2)} €</Text>
+      <Text style={tw('flex-row justify-between text-[10px] font-bold text-primary')}>Total TTC : {total.toFixed(2)} €</Text>
     </View>
   );
 }

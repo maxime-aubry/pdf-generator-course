@@ -1,9 +1,6 @@
-import { StyleSheet, Text, View } from '@react-pdf/renderer';
+import { Text, View } from '@react-pdf/renderer';
 import { ClientInfoDto } from '../../../common/ClientInfo.dto';
-
-const styles = StyleSheet.create({
-  section: { marginBottom: 12 },
-});
+import { tw } from '../../tailwind';
 
 interface ClientInfoProps {
     clientInfo: ClientInfoDto;
@@ -11,10 +8,10 @@ interface ClientInfoProps {
 
 export default function ClientInfo({ clientInfo }: ClientInfoProps) {
   return (
-    <View style={styles.section}>
-      <Text>Facturé à :</Text>
-      <Text>{clientInfo.name}</Text>
-      <Text>{clientInfo.address}</Text>
+    <View style={tw('mb-5 p-3 border border-gray-200 rounded')}>
+      <Text style={tw('text-[11px] font-bold text-primary mb-1')}>Facturé à :</Text>
+      <Text style={tw('text-[9px]')}>{clientInfo.name}</Text>
+      <Text style={tw('text-[9px]')}>{clientInfo.address}</Text>
     </View>
   );
 }

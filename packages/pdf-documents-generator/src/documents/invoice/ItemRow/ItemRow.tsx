@@ -1,13 +1,6 @@
-import { View, Text, StyleSheet } from '@react-pdf/renderer';
+import { View, Text } from '@react-pdf/renderer';
 import { ItemRowDto } from './ItemRow.dto';
-
-const styles = StyleSheet.create({
-  row: {
-    flexDirection: 'row',
-    paddingVertical: 4,
-    borderBottom: '0.5 solid #ccc',
-  },
-});
+import { tw } from '../../tailwind';
 
 interface ItemsRowProps {
     item: ItemRowDto;
@@ -16,13 +9,13 @@ interface ItemsRowProps {
 export default function ItemRow({ item }: ItemsRowProps) {
   const totalLine = item.quantity * item.unitPrice;
   return (
-    <View style={styles.row}>
-      <Text style={{ width: '50%' }}>{item.description}</Text>
-      <Text style={{ width: '15%', textAlign: 'right' }}>{item.quantity}</Text>
-      <Text style={{ width: '15%', textAlign: 'right' }}>
+    <View style={tw('flex-row border-b border-gray-200 px-2 py-1')}>
+      <Text style={tw('w-1/2 text-[9px]')}>{item.description}</Text>
+      <Text style={tw('w-1/6 text-right text-[9px]')}>{item.quantity}</Text>
+      <Text style={tw('w-1/6 text-right text-[9px]')}>
         {item.unitPrice.toFixed(2)}
       </Text>
-      <Text style={{ width: '20%', textAlign: 'right' }}>
+      <Text style={tw('w-1/6 text-right text-[9px]')}>
         {totalLine.toFixed(2)}
       </Text>
     </View>

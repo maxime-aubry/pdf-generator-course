@@ -1,4 +1,4 @@
-import { Document, Page, StyleSheet, View } from '@react-pdf/renderer';
+import { Document, Page, View } from '@react-pdf/renderer';
 import ClientInfo from './ClientInfo/ClientInfo';
 import Footer from './Footer/Footer';
 import Header from './Header/Header';
@@ -6,15 +6,7 @@ import InvoiceInfo from './InvoiceInfo/InvoiceInfo';
 import { InvoiceInfoDto } from './InvoiceInfoDto.dto';
 import ItemsTable from './ItemsTable/ItemsTable';
 import Totals from './Totals/Totals';
-
-const styles = StyleSheet.create({
-  page: {
-    paddingTop: 50,   // espace pour le header
-    paddingBottom: 80, // espace pour le footer
-    paddingHorizontal: 40,
-    fontSize: 10,
-  },
-});
+import { tw } from '../tailwind';
 
 interface InvoiceProps {
   invoice: InvoiceInfoDto;
@@ -25,7 +17,7 @@ export const InvoiceDocument = ({ invoice }: InvoiceProps) => {
 
   return (
     <Document>
-      <Page size="A4" style={styles.page}>
+      <Page size="A4" style={tw('pt-24 pb-24 px-10 text-[10px] text-grayText')}>
         <Header companyInfo={companyInfo} />
         <View>
           <InvoiceInfo invoiceInfo={invoice} />
