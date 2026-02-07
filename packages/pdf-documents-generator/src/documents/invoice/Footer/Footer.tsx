@@ -1,9 +1,9 @@
-import { View, Text } from '@react-pdf/renderer';
-import { CompanyInfoDto } from '../../../common/CompanyInfo.dto';
-import { tw } from '../../tailwind';
+import { Text, View } from '@react-pdf/renderer';
+import { ICompanyInfoDto } from '../../../common/dtos/CompanyInfo.dto';
+import { tw } from '../../../common/tailwind';
 
 interface FooterProps {
-    companyInfo: CompanyInfoDto;
+  companyInfo: ICompanyInfoDto;
 }
 
 export default function Footer({ companyInfo }: FooterProps) {

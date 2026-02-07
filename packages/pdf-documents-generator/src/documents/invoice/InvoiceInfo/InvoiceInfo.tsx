@@ -1,9 +1,9 @@
-import { View, Text } from '@react-pdf/renderer';
-import { InvoiceInfoDto } from '../InvoiceInfoDto.dto';
-import { tw } from '../../tailwind';
+import { Text, View } from '@react-pdf/renderer';
+import { tw } from '../../../common/tailwind';
+import { IInvoiceInfoDto } from '../InvoiceInfo.dto';
 
 interface InvoiceInfoProps {
-    invoiceInfo: InvoiceInfoDto;
+  invoiceInfo: IInvoiceInfoDto;
 }
 
 export default function InvoiceInfo({ invoiceInfo: invocieInfo }: InvoiceInfoProps) {

@@ -1,6 +1,16 @@
-export {
-    generateInvoiceAsync
-} from "./provider/pdf-document-provider";
+import { generateInvoiceAsync } from "./provider";
+import { IClientInfoDto } from "./common/dtos/ClientInfo.dto";
+import { ICompanyInfoDto } from "./common/dtos/CompanyInfo.dto";
+import { IInvoiceInfoDto } from "./documents/invoice/InvoiceInfo.dto";
+import { IItemRowDto } from "./documents/invoice/ItemRow/ItemRow.dto";
 
-export { InvoiceDocument } from "./documents/invoice";
-export type { InvoiceDto } from "./documents/invoice";
+export {
+  generateInvoiceAsync,
+}
+
+export type {
+  IClientInfoDto,
+  ICompanyInfoDto,
+  IInvoiceInfoDto,
+  IItemRowDto,
+}

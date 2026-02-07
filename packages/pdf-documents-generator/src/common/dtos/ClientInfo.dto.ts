@@ -1,4 +1,4 @@
-export interface ClientInfoDto {
+export interface IClientInfoDto {
     name: string;
     address: string;
 }

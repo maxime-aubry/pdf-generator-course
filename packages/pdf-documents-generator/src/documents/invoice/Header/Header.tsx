@@ -1,14 +1,9 @@
 import { Text, View } from '@react-pdf/renderer';
-import { CompanyInfoDto } from '../../../common/CompanyInfo.dto';
-import { tw } from '../../tailwind';
-
-// const styles = StyleSheet.create({
-//   header: { marginBottom: 20 },
-//   logo: { width: 100, height: 50 },
-// });
+import { ICompanyInfoDto } from '../../../common/dtos/CompanyInfo.dto';
+import { tw } from '../../../common/tailwind';
 
 interface HeaderProps {
-    companyInfo: CompanyInfoDto;
+  companyInfo: ICompanyInfoDto;
 }
 
 export default function Header({ companyInfo: company }: HeaderProps) {

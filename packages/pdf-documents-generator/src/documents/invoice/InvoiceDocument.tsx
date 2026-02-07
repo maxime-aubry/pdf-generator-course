@@ -1,27 +1,27 @@
 import { Document, Page, View } from '@react-pdf/renderer';
+import { tw } from '../tailwind';
 import ClientInfo from './ClientInfo/ClientInfo';
 import Footer from './Footer/Footer';
 import Header from './Header/Header';
+import { IInvoiceInfoDto } from './InvoiceInfo.dto';
 import InvoiceInfo from './InvoiceInfo/InvoiceInfo';
-import { InvoiceInfoDto } from './InvoiceInfoDto.dto';
 import ItemsTable from './ItemsTable/ItemsTable';
 import Totals from './Totals/Totals';
-import { tw } from '../tailwind';
 
 interface InvoiceProps {
-  invoice: InvoiceInfoDto;
+  invoiceInfo: IInvoiceInfoDto;
 }
 
-export const InvoiceDocument = ({ invoice }: InvoiceProps) => {
-  const { companyInfo, items, tax } = invoice;
+export default function InvoiceDocument({ invoiceInfo }: InvoiceProps) {
+  const { companyInfo, items, tax } = invoiceInfo;
 
   return (
     <Document>
       <Page size="A4" style={tw('pt-24 pb-24 px-10 text-[10px] text-grayText')}>
         <Header companyInfo={companyInfo} />
         <View>
-          <InvoiceInfo invoiceInfo={invoice} />
-          <ClientInfo clientInfo={invoice.client} />
+          <InvoiceInfo invoiceInfo={invoiceInfo} />
+          <ClientInfo clientInfo={invoiceInfo.client} />
           <ItemsTable items={items} />
           <Totals items={items} tax={tax} />
         </View>

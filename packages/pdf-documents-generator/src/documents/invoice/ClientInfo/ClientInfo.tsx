@@ -1,9 +1,9 @@
 import { Text, View } from '@react-pdf/renderer';
-import { ClientInfoDto } from '../../../common/ClientInfo.dto';
-import { tw } from '../../tailwind';
+import { IClientInfoDto } from '../../../common/dtos/ClientInfo.dto';
+import { tw } from '../../../common/tailwind';
 
 interface ClientInfoProps {
-    clientInfo: ClientInfoDto;
+  clientInfo: IClientInfoDto;
 }
 
 export default function ClientInfo({ clientInfo }: ClientInfoProps) {

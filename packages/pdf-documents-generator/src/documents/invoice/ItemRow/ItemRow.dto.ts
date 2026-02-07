@@ -1,5 +1,5 @@
-export interface ItemRowDto {
-    description: string;
-    quantity: number;
-    unitPrice: number;
+export interface IItemRowDto {
+  description: string;
+  quantity: number;
+  unitPrice: number;
 }

@@ -1,10 +1,10 @@
-import { View, Text } from '@react-pdf/renderer';
-import { ItemRowDto } from '../ItemRow/ItemRow.dto';
+import { Text, View } from '@react-pdf/renderer';
+import { tw } from '../../../common/tailwind';
 import ItemRow from '../ItemRow/ItemRow';
-import { tw } from '../../tailwind';
+import { IItemRowDto } from '../ItemRow/ItemRow.dto';
 
 interface ItemsTableProps {
-    items: ItemRowDto[];
+  items: IItemRowDto[];
 }
 
 export default function ItemsTable({ items }: ItemsTableProps) {

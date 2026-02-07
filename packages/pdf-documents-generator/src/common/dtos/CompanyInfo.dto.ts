@@ -1,4 +1,4 @@
-export interface CompanyInfoDto {
+export interface ICompanyInfoDto {
     logo: string;
     name: string;
     address: string;
