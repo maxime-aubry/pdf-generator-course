@@ -1,6 +1,9 @@
+import { Style } from "@react-pdf/types";
 import { createTw } from "react-pdf-tailwind";
 
-export const tw = createTw({
+type Tailwind = (input: string) => Style;
+
+export const tw: Tailwind = createTw({
   theme: {
     fontFamily: {
       sans: ['Helvetica'],

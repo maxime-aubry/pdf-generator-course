@@ -8,9 +8,9 @@ import {
 } from '@nestjs/swagger';
 import {
   generateInvoiceAsync,
-  IInvoiceInfoDto,
+  type IInvoiceInfoDto,
 } from '@repo/pdf-documents-generator';
-import { Response } from 'express';
+import type { Response } from 'express';
 import { InvoiceInfoDto } from './dtos/dto';
 import { IEndpoint } from './interfaces/endpoint.interface';
 import { IPresenter } from './interfaces/presenter.interface';
