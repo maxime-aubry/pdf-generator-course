@@ -2,20 +2,12 @@
   "name": "@repo/pdf-documents-generator",
   "version": "0.0.0",
   "private": true,
-  "type": "module",
-  "main": "./dist/index.cjs",
-  "types": "./dist/index.d.ts",
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    }
+    ".": "./src/index.ts"
   },
   "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch",
     "lint": "eslint . --max-warnings 0",
+    "generate:component": "turbo gen react-component",
     "check-types": "tsc --noEmit"
   },
   "devDependencies": {
@@ -32,7 +24,6 @@
     "@react-pdf/renderer": "^4.3.2",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "react-pdf-tailwind": "^3.0.0",
-    "tsup": "^8.5.1"
+    "react-pdf-tailwind": "^3.0.0"
   }
 }

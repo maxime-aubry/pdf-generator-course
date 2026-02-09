@@ -6,8 +6,8 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "build": "nest build -p tsconfig.build.json",
-    "dev": "concurrently -k \"nest build --watch -p tsconfig.build.json\" \"wait-on dist/main.js ../../packages/pdf-documents-generator/dist/index.cjs && node --watch dist/main.js\"",
+    "build": "nest build",
+    "dev": "nest start --watch",
     "lint": "eslint \"src/**/*.ts\" --max-warnings 0",
     "check-types": "tsc --noEmit"
   },
@@ -32,6 +32,7 @@
     "@nestjs/cli": "^11.0.0",
     "@nestjs/schematics": "^11.0.0",
     "@nestjs/testing": "^11.0.1",
+    "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@types/express": "^5.0.0",
     "@types/jest": "^30.0.0",

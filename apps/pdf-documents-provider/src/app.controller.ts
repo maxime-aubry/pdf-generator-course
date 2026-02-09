@@ -35,7 +35,7 @@ export class AppController implements IEndpoint<IInvoiceInfoDto> {
     @Body() dto: IInvoiceInfoDto,
     @Res({ passthrough: true }) response: Response,
   ): Promise<StreamableFile> {
-    const stream: Buffer = await generateInvoiceAsync(dto);
+    const stream: Buffer<ArrayBufferLike> = await generateInvoiceAsync(dto);
     const presenter: IPresenter<Buffer, StreamableFile> = new StreamPresenter(
       response,
       'invoice',

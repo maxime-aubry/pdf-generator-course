@@ -1,7 +1,4 @@
 {
   "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "noEmit": false
-  },
-  "exclude": ["node_modules", "dist", "test", "**/*.spec.ts", "**/*.tets.ts"]
+  "exclude": ["node_modules", "dist", "**/*.test.*", "**/*.spec.*", "**/*spec.ts", ".prettierrc.mjs", "eslint.config.mjs"]
 }
