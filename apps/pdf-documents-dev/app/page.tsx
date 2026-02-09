@@ -1,13 +1,14 @@
 import Link from "next/link";
+import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <main style={{ padding: 24 }}>
-      <h1>Accueil</h1>
+    <main className={styles.container}>
+      <h1 className={styles.title}>Liste des documents PDF</h1>
 
-      <ul style={{ marginTop: 16 }}>
-        <li>
-          <Link href="/invoice">Invoice</Link>
+      <ul className={styles.list}>
+        <li className={styles.item}>
+          <Link href="/invoice"  className={styles.link}>Invoice</Link>
         </li>
       </ul>
     </main>

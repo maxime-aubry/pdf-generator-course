@@ -3,19 +3,20 @@ import { Response } from 'express';
 import Stream, { PassThrough, Readable } from 'node:stream';
 import { IPresenter } from '../interfaces/presenter.interface';
 
-export class StreamPresenter implements IPresenter<Buffer, StreamableFile> {
+export class StreamPresenter implements IPresenter<
+  NodeJS.ReadableStream,
+  StreamableFile
+> {
   constructor(
     private response: Response,
     private filename: string,
   ) {}
 
-  public format(buffer: Buffer<ArrayBufferLike>): StreamableFile {
+  public format(stream: NodeJS.ReadableStream): StreamableFile {
     this.response.set({
       'Content-Type': 'application/pdf',
       'Content-Disposition': `attachment; filename="${this.filename}.pdf"`,
     });
-
-    const stream: NodeJS.ReadableStream = Readable.from(buffer);
     const readable: Stream.Readable = this.toNodeReadable(stream);
     return new StreamableFile(readable);
   }

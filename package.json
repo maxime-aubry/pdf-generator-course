@@ -2,7 +2,7 @@
   "name": "pdf-documents-course",
   "private": true,
   "scripts": {
-    "dev": "turbo run dev",
+    "dev": "turbo run dev --parallel",
     "build": "turbo run build",
     "lint": "turbo run lint",
     "check-types": "turbo run check-types",

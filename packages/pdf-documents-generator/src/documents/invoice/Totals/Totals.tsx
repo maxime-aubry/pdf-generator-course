@@ -1,5 +1,5 @@
 import { Text } from '@react-pdf/renderer';
-import Panel from '../../../common/components/Panel.js';
+import Panel from '../../../common/components/Panel';
 import { tw } from '../../../common/tailwind';
 import { IItemRowDto } from '../ItemRow/ItemRow.dto';
 
@@ -7,6 +7,12 @@ interface TotalsProps {
   items: IItemRowDto[];
   tax: number;
 }
+
+// const styles = StyleSheet.create({
+//   box: {
+//     width: "170px",
+//   }
+// });
 
 export default function Totals({ items, tax }: TotalsProps) {
   const subtotal: number = items.reduce(

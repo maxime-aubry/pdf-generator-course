@@ -4,14 +4,13 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "next dev --port 3000",
+    "dev": "cross-env NEXT_DISABLE_TURBOPACK=1 next dev --port 3000",
     "build": "next build",
     "lint": "eslint --max-warnings 0",
     "check-types": "next typegen && tsc --noEmit"
   },
   "dependencies": {
     "@react-pdf/renderer": "^4.3.2",
-    "@repo/pdf-documents-generator": "workspace:*",
     "next": "16.1.5",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
@@ -22,6 +21,7 @@
     "@types/node": "^22.15.3",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
+    "cross-env": "^10.1.0",
     "eslint": "^9.39.1",
     "typescript": "5.9.2"
   }

@@ -6,10 +6,7 @@ import {
   ApiProduces,
   ApiTags,
 } from '@nestjs/swagger';
-import {
-  generateInvoiceAsync,
-  type IInvoiceInfoDto,
-} from '@repo/pdf-documents-generator';
+import { generateInvoiceAsync } from '@repo/pdf-documents-generator';
 import type { Response } from 'express';
 import { InvoiceInfoDto } from './dtos/dto';
 import { IEndpoint } from './interfaces/endpoint.interface';
@@ -18,7 +15,7 @@ import { StreamPresenter } from './presenters/stream-presenter';
 
 @ApiTags('download')
 @Controller('download')
-export class AppController implements IEndpoint<IInvoiceInfoDto> {
+export class AppController implements IEndpoint<InvoiceInfoDto> {
   @Post('invoice')
   @ApiOperation({ summary: 'Génère une facture PDF' })
   @ApiBody({ type: InvoiceInfoDto })
@@ -32,14 +29,12 @@ export class AppController implements IEndpoint<IInvoiceInfoDto> {
     },
   })
   public async executeAsync(
-    @Body() dto: IInvoiceInfoDto,
+    @Body() dto: InvoiceInfoDto,
     @Res({ passthrough: true }) response: Response,
   ): Promise<StreamableFile> {
-    const stream: Buffer<ArrayBufferLike> = await generateInvoiceAsync(dto);
-    const presenter: IPresenter<Buffer, StreamableFile> = new StreamPresenter(
-      response,
-      'invoice',
-    );
+    const stream: NodeJS.ReadableStream = await generateInvoiceAsync(dto);
+    const presenter: IPresenter<NodeJS.ReadableStream, StreamableFile> =
+      new StreamPresenter(response, 'invoice');
     return presenter.format(stream);
   }
 }

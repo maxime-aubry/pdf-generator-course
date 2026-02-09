@@ -1,8 +1,5 @@
 {
-  "extends": "@repo/typescript-config/react-library.json",
-  "compilerOptions": {
-    "outDir": "dist"
-  },
+  "extends": "@repo/typescript-config/react-library-bundler.json",
   "include": ["src"],
   "exclude": ["node_modules", "dist", "**/*.test.*", "**/*.spec.*", "**/*spec.ts", ".prettierrc.mjs", "eslint.config.mjs"]
 }

@@ -97,7 +97,17 @@ export class InvoiceInfoDto implements IInvoiceInfoDto {
   @Type(() => CompanyInfoDto)
   companyInfo: CompanyInfoDto;
 
-  @ApiProperty({ type: () => [ItemRowDto] })
+  @ApiProperty({
+    type: () => [ItemRowDto],
+    example: Array.from<unknown, ItemRowDto>(
+      { length: 10 },
+      (_, index: number) => ({
+        description: `Produit ${index + 1}`,
+        quantity: Math.ceil(Math.random() * (20 - 1) + 1),
+        unitPrice: Math.random() * (200 - 1) + 1,
+      }),
+    ),
+  })
   @IsArray()
   @ArrayMinSize(1)
   @ValidateNested({ each: true })

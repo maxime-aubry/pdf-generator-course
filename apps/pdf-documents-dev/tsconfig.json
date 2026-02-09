@@ -1,5 +1,12 @@
 {
   "extends": "@repo/typescript-config/nextjs.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@repo/pdf-documents-generator": ["../../packages/pdf-documents-generator/src/index.ts"],
+      "@repo/pdf-documents-generator/*": ["../../packages/pdf-documents-generator/src/*"],
+    }
+  },
   "include": [
     "**/*.ts",
     "**/*.tsx",

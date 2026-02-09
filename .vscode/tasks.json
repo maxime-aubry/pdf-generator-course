@@ -1,0 +1,12 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build pdf-documents-generator",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["-C", "packages/pdf-documens-generator", "build"],
+      "problemMatcher": []
+    }
+  ]
+}

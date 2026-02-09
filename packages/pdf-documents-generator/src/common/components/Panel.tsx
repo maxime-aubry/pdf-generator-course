@@ -9,7 +9,7 @@ interface PanelProps {
 
 export default function Panel({ children, style }: PropsWithChildren<PanelProps>) {
   return <View style={[
-    tw(`mt-6 ml-auto p-3 border border-gray-200 rounded bg-gray-50`),
+    tw(`mt-6 ml-auto p-3 border border-gray-200 rounded bg-gray-200`),
     style ?? tw('')
   ]}>
     { children }

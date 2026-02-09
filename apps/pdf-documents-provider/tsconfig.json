@@ -2,6 +2,13 @@
   "extends": "@repo/typescript-config/nestjs.json",
   "compilerOptions": {
     "baseUrl": "./",
-    "outDir": "./dist"
-  }
+    "outDir": "./dist",
+    "removeComments": true,
+    "sourceMap": true,
+    "incremental": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist", "test", "**/*.test.*", "**/*.spec.*", "**/*spec.ts", ".prettierrc.mjs", "eslint.config.mjs"]
 }

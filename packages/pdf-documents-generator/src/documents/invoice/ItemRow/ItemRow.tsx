@@ -13,12 +13,8 @@ export default function ItemRow({ item }: ItemsRowProps) {
     <View style={tw('flex-row border-b border-gray-200 px-2 py-1')}>
       <Text style={tw('w-1/2 text-[9px]')}>{item.description}</Text>
       <Text style={tw('w-1/6 text-right text-[9px]')}>{item.quantity}</Text>
-      <Text style={tw('w-1/6 text-right text-[9px]')}>
-        {item.unitPrice.toFixed(2)}
-      </Text>
-      <Text style={tw('w-1/6 text-right text-[9px]')}>
-        {totalLine.toFixed(2)}
-      </Text>
+      <Text style={tw('w-1/6 text-right text-[9px]')}>{item.unitPrice.toFixed(2)}</Text>
+      <Text style={tw('w-1/6 text-right text-[9px]')}>{totalLine.toFixed(2)}</Text>
     </View>
   );
 }
